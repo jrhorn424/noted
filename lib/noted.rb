@@ -1,3 +1,4 @@
+require 'noted/cache'
 require 'noted/configuration'
 require 'noted/version'
 
@@ -16,6 +17,14 @@ module Noted
 
   def configure
     yield(configuration)
+  end
+
+  def cache
+    @cache ||= Cache.new
+  end
+
+  def refresh_cache
+    @cache = Cache.new
   end
 
   def root

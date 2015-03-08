@@ -33,6 +33,28 @@ describe Noted do
     end
   end
 
+  describe '::cache' do
+    it 'returns a cache object' do
+      expect(Noted.cache).to be_a Noted::Cache
+    end
+
+    it 'returns a singleton' do
+      cache = Noted.cache
+      expect(Noted.cache).to be cache
+    end
+  end
+
+  describe '::refresh_cache' do
+    it 'returns a cache object' do
+      expect(Noted.refresh_cache).to be_a Noted::Cache
+    end
+
+    it 'returns a new cache object' do
+      cache = Noted.cache
+      expect(Noted.refresh_cache).not_to be cache
+    end
+  end
+
   describe '::root' do
     it 'returns the file path as a string' do
       expect(Noted.root).to be_a String
