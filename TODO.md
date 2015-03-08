@@ -1,1 +1,6 @@
-- [ ] Register files in search path
+- [X] Register folders in search path
+- [X] Cache files in search path
+- [X] Search by name
+- [X] Search by contents
+- [ ] Fuzzy search file name
+- [ ] Sort by relevance/frequency
