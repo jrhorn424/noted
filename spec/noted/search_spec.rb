@@ -31,10 +31,19 @@ describe Noted::Search do
   end
 
   describe '#relevance' do
-    it 'orders results by Levenshtein distance and number of matches'
+    it 'orders results by Levenshtein distance and number of matches' do
+      files = ['kitten.txt', 'sitten.txt', 'sitting.txt']
+      expect(Noted::Search.relevance('kitten', files.shuffle)).to eq [
+        'kitten.txt',
+        'sitten.txt',
+        'sitting.txt'
+      ]
+    end
   end
 
   describe '#distance' do
-    it 'computes Levenshtein distance'
+    it 'computes Levenshtein distance' do
+      expect(Noted::Search.distance('kitten', 'smitten')).to eq 2
+    end
   end
 end

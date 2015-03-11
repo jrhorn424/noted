@@ -14,8 +14,17 @@ module Noted
 
     def by_full_text(query)
       Noted.cache.files.select do |file|
-        File.open(file) { |f| f.any? { |line| line.include? query } }
+        open(file) { |f| f.each_line.detect { |line| line.include? query } }
       end
+    end
+
+    def relevance(query, results)
+      results.sort_by { |result| distance(query, result) }
+    end
+
+    def distance(string, other_string)
+      require 'levenshtein-ffi'
+      Levenshtein.distance(string, other_string)
     end
   end
 end
