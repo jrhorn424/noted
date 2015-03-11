@@ -3,4 +3,5 @@
 - [X] Search by name
 - [X] Search by contents
 - [ ] Fuzzy search file name
-- [ ] Sort by relevance/frequency
+- [X] Sort by relevance/frequency
+- [ ] Refactor Search module into a class with query, result, and files ivars
