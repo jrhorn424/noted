@@ -1,6 +1,7 @@
 require 'noted/version'
 require 'noted/configuration'
 require 'noted/cache'
+require 'noted/search'
 
 module Noted
   extend self
