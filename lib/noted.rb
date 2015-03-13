@@ -1,6 +1,6 @@
-require 'noted/cache'
-require 'noted/configuration'
 require 'noted/version'
+require 'noted/configuration'
+require 'noted/cache'
 
 module Noted
   extend self
