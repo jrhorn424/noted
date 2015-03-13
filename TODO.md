@@ -2,6 +2,7 @@
 - [X] Cache files in search path
 - [X] Search by name
 - [X] Search by contents
-- [ ] Fuzzy search file name
+- [X] Fuzzy search file name
 - [X] Sort by relevance/frequency
-- [ ] Refactor Search module into a class with query, result, and files ivars
+- [X] Refactor Search module into a class
+- [ ] Sort full-text matches by frequency
