@@ -10,7 +10,7 @@ module Noted
       end
 
       def sort
-        sort_by { |result| edit_distance(@query, result) }
+        sort_by { |match| edit_distance(@query, match) }
       end
 
     private
